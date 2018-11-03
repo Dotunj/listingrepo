@@ -10,10 +10,7 @@ class AdminController extends BaseController
 {
    public function index()
    {
-       $contact = new ContactModel();
 
-       $records = $contact->getContacts();
-
-       return $this->view->render('contacts/index', compact('records'));
+       return $this->view->render('admin/login');
    }
 }

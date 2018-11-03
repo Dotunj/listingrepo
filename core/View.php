@@ -4,7 +4,7 @@ namespace Core;
 
 class View
 {
-    public function render($path, $data=NULL)
+    public function render($path, $data= [])
     {
         if ($data) {
             // Extract the rendering variables.

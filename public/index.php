@@ -5,6 +5,7 @@ require '../vendor/autoload.php';
 require_once '../route/routes.php';
 
 use Pecee\SimpleRouter\SimpleRouter;
+use App\Helpers\Session;
 
 define('ENVIRONMENT', 'development');
 
@@ -33,6 +34,7 @@ define('ROOTDIR', realpath(__DIR__.'/../') .DS);
 
 
 SimpleRouter::start();
+Session::init();
 
 
 
