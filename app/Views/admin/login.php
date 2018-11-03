@@ -31,25 +31,15 @@
                 <div class="logo text-center"></div>
                 <p class="lead">Login to your account</p>
               </div>
-              <form class="form-auth-small" method="post" action="">
+              <form class="form-auth-small" method="post" action="/admin/login">
                 <div class="form-group">
-                    <p class="alert alert-danger"></p>
-            
-                    <div class="alert alert-danger">
-                    </div>
-    
+                   <?php include(APPDIR. 'views/admin/layouts/errors.php') ?> 
                   <label for="signin-email" class="control-label sr-only">Email</label>
                   <input type="email" name="email" class="form-control" id="signin-email" value="" placeholder="Email">
                 </div>
                 <div class="form-group">
                   <label for="signin-password" class="control-label sr-only">Password</label>
                   <input type="password" name="password" class="form-control" id="signin-password" value="" placeholder="Password">
-                </div>
-                <div class="form-group clearfix">
-                  <label class="fancy-checkbox element-left">
-                    <input type="checkbox" name="remember">
-                    <span>Remember me</span>
-                  </label>
                 </div>
                 <button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
               </form>

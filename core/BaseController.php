@@ -3,6 +3,8 @@
 namespace Core;
 
 use Core\View;
+use Pecee\SimpleRouter\SimpleRouter as Router;
+use Pecee\Http\Request;
 
 /*
  * controller - base controller
@@ -46,5 +48,6 @@ class BaseController
         $url = filter_var($url, FILTER_SANITIZE_URL);
         return $this->url = $url;
     }
+
 
 }
