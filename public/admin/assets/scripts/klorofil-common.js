@@ -10,6 +10,8 @@ $(document).ready(function () {
 		multipleWidth: 55
 	});
 
+	$('div.alert').not('.alert-important').delay(100).fadeOut(350);
+
 
 	$('.btn-toggle-fullwidth').on('click', function () {
 		if (!$('body').hasClass('layout-fullwidth')) {

@@ -30,3 +30,13 @@ function response(): Response
 {
     return Router::response();
 }
+
+function csrf_token(): ?string
+{
+    $baseVerifier = Router::router()->getCsrfVerifier();
+    if ($baseVerifier !== null) {
+        return $baseVerifier->getTokenProvider()->getToken();
+    }
+
+    return null;
+}

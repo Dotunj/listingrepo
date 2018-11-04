@@ -12,8 +12,24 @@ class Listing extends BaseModel
        return $this->db->insert('listings', $data);
     }
 
-    public function getListing()
+    public function get_all_listings()
     {
-       
+       return $this->db->select('* from listings');
+    }
+
+    public function get_listing($id)
+    {
+        $data = $this->db->select('* from listings where id = :id', [':id' => $id]);
+        return (isset($data[0]) ? $data[0] : null);
+    }
+
+    public function update_listing($data, $where)
+    {
+        return $this->db->update('listings', $data, $where);
+    }
+
+    public function delete_listing($where)
+    {
+        return $this->db->delete('listings', $where);
     }
 }

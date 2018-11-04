@@ -30,8 +30,9 @@ class Session
     {
         $value = $_SESSION[$key];
         unset($_SESSION[$key]);
-        
+
         return $value;
+        
     }
 
     public static function get($key)
@@ -56,6 +57,7 @@ class Session
             session_destroy();
         } else {
             unset($_SESSION[$key]);
+            session_destroy();
         }
     }
 

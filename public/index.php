@@ -32,7 +32,6 @@ define('COREDIR', realpath(__DIR__.'/../core/') .DS);
 define('PUBLICDIR', realpath(__DIR__) .DS);
 define('ROOTDIR', realpath(__DIR__.'/../') .DS);
 
-
 Session::init();
 SimpleRouter::start();
 
