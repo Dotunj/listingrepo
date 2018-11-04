@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="/admin/assets/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/admin/assets/vendor/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="/admin/assets/vendor/linearicons/style.css">
+  
+
   <!--text editor-->
 
   <!-- MAIN CSS -->

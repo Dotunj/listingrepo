@@ -20,7 +20,6 @@ class CategoryController extends BaseController
      public function create()
      {
     
-         Session::display();
          return $this->view->render('/category/create');
      }
 

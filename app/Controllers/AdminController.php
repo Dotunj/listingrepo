@@ -15,16 +15,14 @@ class AdminController extends BaseController
    {
        parent::__construct();
 
-       if(Session::get('logged_in') === true){
-        redirect('/admin/dashboard');
-     };
-
        $this->admin = new Admin();
    }
 
    public function index()
    {
-
+    //  if(Session::get('logged_in') === true){
+    //     redirect('/admin/dashboard');
+    //   };
        return $this->view->render('admin/login');
    }
 
@@ -64,7 +62,7 @@ class AdminController extends BaseController
    {
        Session::destroy();
 
-       redirect('/admin');
+       response()->redirect('/');
    }
 
 }

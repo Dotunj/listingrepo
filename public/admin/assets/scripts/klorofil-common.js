@@ -1,11 +1,18 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
 	/*-----------------------------------/
 	/*	TOP NAVIGATION AND LAYOUT
 	/*----------------------------------*/
 
-	$('.btn-toggle-fullwidth').on('click', function() {
-		if(!$('body').hasClass('layout-fullwidth')) {
+	$('#ms').multipleSelect({
+		width: 460,
+		multiple: true,
+		multipleWidth: 55
+	});
+
+
+	$('.btn-toggle-fullwidth').on('click', function () {
+		if (!$('body').hasClass('layout-fullwidth')) {
 			$('body').addClass('layout-fullwidth');
 
 		} else {
@@ -15,8 +22,8 @@ $(document).ready(function() {
 
 		$(this).find('.lnr').toggleClass('lnr-arrow-left-circle lnr-arrow-right-circle');
 
-		if($(window).innerWidth() < 1025) {
-			if(!$('body').hasClass('offcanvas-active')) {
+		if ($(window).innerWidth() < 1025) {
+			if (!$('body').hasClass('offcanvas-active')) {
 				$('body').addClass('offcanvas-active');
 			} else {
 				$('body').removeClass('offcanvas-active');
@@ -24,23 +31,23 @@ $(document).ready(function() {
 		}
 	});
 
-	$(window).on('load', function() {
-		if($(window).innerWidth() < 1025) {
+	$(window).on('load', function () {
+		if ($(window).innerWidth() < 1025) {
 			$('.btn-toggle-fullwidth').find('.icon-arrows')
-			.removeClass('icon-arrows-move-left')
-			.addClass('icon-arrows-move-right');
+				.removeClass('icon-arrows-move-left')
+				.addClass('icon-arrows-move-right');
 		}
 
 		// adjust right sidebar top position
 		$('.right-sidebar').css('top', $('.navbar').innerHeight());
 
 		// if page has content-menu, set top padding of main-content
-		if($('.has-content-menu').length > 0) {
+		if ($('.has-content-menu').length > 0) {
 			$('.navbar + .main-content').css('padding-top', $('.navbar').innerHeight());
 		}
 
 		// for shorter main content
-		if($('.main').height() < $('#sidebar-nav').height()) {
+		if ($('.main').height() < $('#sidebar-nav').height()) {
 			$('.main').css('min-height', $('#sidebar-nav').height());
 		}
 	});
@@ -50,15 +57,15 @@ $(document).ready(function() {
 	/*	SIDEBAR NAVIGATION
 	/*----------------------------------*/
 
-	$('.sidebar a[data-toggle="collapse"]').on('click', function() {
-		if($(this).hasClass('collapsed')) {
+	$('.sidebar a[data-toggle="collapse"]').on('click', function () {
+		if ($(this).hasClass('collapsed')) {
 			$(this).addClass('active');
 		} else {
 			$(this).removeClass('active');
 		}
 	});
 
-	if( $('.sidebar-scroll').length > 0 ) {
+	if ($('.sidebar-scroll').length > 0) {
 		$('.sidebar-scroll').slimScroll({
 			height: '95%',
 			wheelStep: 2,
@@ -80,10 +87,10 @@ $(document).ready(function() {
 	/*----------------------------------*/
 
 	// panel remove
-	$('.panel .btn-remove').click(function(e){
+	$('.panel .btn-remove').click(function (e) {
 
 		e.preventDefault();
-		$(this).parents('.panel').fadeOut(300, function(){
+		$(this).parents('.panel').fadeOut(300, function () {
 			$(this).remove();
 		});
 	});
@@ -92,22 +99,22 @@ $(document).ready(function() {
 	var affectedElement = $('.panel-body');
 
 	$('.panel .btn-toggle-collapse').clickToggle(
-		function(e) {
+		function (e) {
 			e.preventDefault();
 
 			// if has scroll
-			if( $(this).parents('.panel').find('.slimScrollDiv').length > 0 ) {
+			if ($(this).parents('.panel').find('.slimScrollDiv').length > 0) {
 				affectedElement = $('.slimScrollDiv');
 			}
 
 			$(this).parents('.panel').find(affectedElement).slideUp(300);
 			$(this).find('i.lnr-chevron-up').toggleClass('lnr-chevron-down');
 		},
-		function(e) {
+		function (e) {
 			e.preventDefault();
 
 			// if has scroll
-			if( $(this).parents('.panel').find('.slimScrollDiv').length > 0 ) {
+			if ($(this).parents('.panel').find('.slimScrollDiv').length > 0) {
 				affectedElement = $('.slimScrollDiv');
 			}
 
@@ -121,14 +128,14 @@ $(document).ready(function() {
 	/*	PANEL SCROLLING
 	/*----------------------------------*/
 
-	if( $('.panel-scrolling').length > 0) {
+	if ($('.panel-scrolling').length > 0) {
 		$('.panel-scrolling .panel-body').slimScroll({
 			height: '430px',
 			wheelStep: 2,
 		});
 	}
 
-	if( $('#panel-scrolling-demo').length > 0) {
+	if ($('#panel-scrolling-demo').length > 0) {
 		$('#panel-scrolling-demo .panel-body').slimScroll({
 			height: '175px',
 			wheelStep: 2,
@@ -138,20 +145,20 @@ $(document).ready(function() {
 	//delete confirmation
 
 
-	      $(".delete").on("submit", function () {
-	      	return confirm("Do you want to delete this item?");
-		  });
-		   $(".deletegallery").on("submit", function () {
-	      	return confirm("Do you want to delete this gallery?");
-	      });
+	$(".delete").on("submit", function () {
+		return confirm("Do you want to delete this item?");
+	});
+	$(".deletegallery").on("submit", function () {
+		return confirm("Do you want to delete this gallery?");
+	});
 	/*-----------------------------------/
 	/*	TODO LIST
 	/*----------------------------------*/
 
-	$('.todo-list input').change( function() {
-		if( $(this).prop('checked') ) {
+	$('.todo-list input').change(function () {
+		if ($(this).prop('checked')) {
 			$(this).parents('li').addClass('completed');
-		}else {
+		} else {
 			$(this).parents('li').removeClass('completed');
 		}
 	});
@@ -161,61 +168,71 @@ $(document).ready(function() {
 	/* TOASTR NOTIFICATION
 	/*----------------------------------*/
 
-	if($('#toastr-demo').length > 0) {
+	if ($('#toastr-demo').length > 0) {
 		toastr.options.timeOut = "false";
 		toastr.options.closeButton = true;
 		toastr['info']('Hi there, this is notification demo with HTML support. So, you can add HTML elements like <a href="#">this link</a>');
 
-		$('.btn-toastr').on('click', function() {
+		$('.btn-toastr').on('click', function () {
 			$context = $(this).data('context');
 			$message = $(this).data('message');
 			$position = $(this).data('position');
 
-			if($context == '') {
+			if ($context == '') {
 				$context = 'info';
 			}
 
-			if($position == '') {
+			if ($position == '') {
 				$positionClass = 'toast-left-top';
 			} else {
 				$positionClass = 'toast-' + $position;
 			}
 
 			toastr.remove();
-			toastr[$context]($message, '' , { positionClass: $positionClass });
+			toastr[$context]($message, '', {
+				positionClass: $positionClass
+			});
 		});
 
-		$('#toastr-callback1').on('click', function() {
+		$('#toastr-callback1').on('click', function () {
 			$message = $(this).data('message');
 
 			toastr.options = {
 				"timeOut": "300",
-				"onShown": function() { alert('onShown callback'); },
-				"onHidden": function() { alert('onHidden callback'); }
+				"onShown": function () {
+					alert('onShown callback');
+				},
+				"onHidden": function () {
+					alert('onHidden callback');
+				}
 			}
 
 			toastr['info']($message);
 		});
 
-		$('#toastr-callback2').on('click', function() {
+		$('#toastr-callback2').on('click', function () {
 			$message = $(this).data('message');
 
 			toastr.options = {
 				"timeOut": "10000",
-				"onclick": function() { alert('onclick callback'); },
+				"onclick": function () {
+					alert('onclick callback');
+				},
 			}
 
 			toastr['info']($message);
 
 		});
 
-		$('#toastr-callback3').on('click', function() {
+		$('#toastr-callback3').on('click', function () {
 			$message = $(this).data('message');
 
 			toastr.options = {
 				"timeOut": "10000",
 				"closeButton": true,
-				"onCloseClick": function() { alert('onCloseClick callback'); }
+				"onCloseClick": function () {
+					alert('onCloseClick callback');
+				}
 			}
 
 			toastr['info']($message);
@@ -224,11 +241,11 @@ $(document).ready(function() {
 });
 
 // toggle function
-$.fn.clickToggle = function( f1, f2 ) {
-	return this.each( function() {
+$.fn.clickToggle = function (f1, f2) {
+	return this.each(function () {
 		var clicked = false;
-		$(this).bind('click', function() {
-			if(clicked) {
+		$(this).bind('click', function () {
+			if (clicked) {
 				clicked = false;
 				return f2.apply(this, arguments);
 			}
@@ -239,5 +256,3 @@ $.fn.clickToggle = function( f1, f2 ) {
 	});
 
 }
-
-

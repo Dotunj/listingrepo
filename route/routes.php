@@ -13,4 +13,6 @@ Router::group(['namespace'=>'App\Controllers'], function(){
     Router::get('/logout', 'AdminController@logout');
     Router::get('/admin/category/create', 'CategoryController@create');
     Router::post('/admin/category/store', 'CategoryController@store');
+    Router::get('/admin/listing/create', 'ListingController@create');
+    Router::post('/admin/listing/store', 'ListingController@store');
 });

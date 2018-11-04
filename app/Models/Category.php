@@ -17,4 +17,10 @@ class Category extends BaseModel
 
         return (isset($data[0]->title) ? $data[0]->title : null);
     }
+
+    public function get_all_categories()
+    {
+        return $this->db->select('* from categories');
+    }
+    
 }
