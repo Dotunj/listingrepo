@@ -33,8 +33,9 @@ define('PUBLICDIR', realpath(__DIR__) .DS);
 define('ROOTDIR', realpath(__DIR__.'/../') .DS);
 
 
-SimpleRouter::start();
 Session::init();
+SimpleRouter::start();
+
 
 
 

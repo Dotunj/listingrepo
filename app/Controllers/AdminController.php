@@ -5,7 +5,7 @@ namespace App\Controllers;
 use Core\BaseController;
 use App\Models\Admin;
 use App\Helpers\{Session, Url};
-use Pecee\Http\Input\InputHandler as Input;
+
 
 class AdminController extends BaseController
 {
@@ -14,6 +14,10 @@ class AdminController extends BaseController
    public function __construct()
    {
        parent::__construct();
+
+       if(Session::get('logged_in') === true){
+        redirect('/admin/dashboard');
+     };
 
        $this->admin = new Admin();
    }
@@ -26,6 +30,7 @@ class AdminController extends BaseController
 
    public function login()
    {
+
        $errors = [];
        
         $email = input()->post('email');
@@ -43,7 +48,7 @@ class AdminController extends BaseController
             Session::set('logged_in', true);
             Session::set('admin_id', $data->id);
 
-            Url::redirect('/admin/dashboard');
+            redirect('/admin/dashboard');
         }
 
        return $this->view->render('admin/login', compact('errors'));
@@ -54,6 +59,12 @@ class AdminController extends BaseController
    {
     return $this->view->render('admin/dashboard');
    }
+   
+   public function logout()
+   {
+       Session::destroy();
 
+       redirect('/admin');
+   }
 
 }

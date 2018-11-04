@@ -1,3 +1,6 @@
+<?php  
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -23,8 +26,4 @@
 </head>
 
 <body>
-<div id="wrapper">
 
-<div class="main">
-
-</div>

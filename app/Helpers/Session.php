@@ -30,6 +30,7 @@ class Session
     {
         $value = $_SESSION[$key];
         unset($_SESSION[$key]);
+        
         return $value;
     }
 
@@ -61,3 +62,5 @@ class Session
   }
 
 }
+
+

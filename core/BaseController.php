@@ -12,21 +12,12 @@ use Pecee\Http\Request;
  */
 class BaseController
 {
-    /**
-     * view variable to use the view class
-     * @var string
-     */
+  
     public $view;
 
-    /**
-     * url variable to get the current relative url
-     * @var string
-     */
     public $url;
 
-    /**
-     * on run make an instance of the config class and view class
-     */
+   
     public function __construct()
     {
         //initialise the views object
@@ -51,3 +42,4 @@ class BaseController
 
 
 }
+

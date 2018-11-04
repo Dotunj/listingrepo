@@ -9,5 +9,5 @@ if (isset($errors)) {
 }
 
 if (Session::get('success')) {
-    echo "<div class='alert alert-success'>".Session::pull('success')."</div>";
+    echo "<div class='alert alert-success'>".Session::get('success')."</div>";
 }
