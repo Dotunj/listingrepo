@@ -13,32 +13,32 @@
 
                         <div class="form-group">
                             <label for="name" class="control-label">Name</label>
-                            <input type="text" name="name" class="form-control" value="<?php echo $listing->name ?>">
+                            <input type="text" name="name" class="form-control" value="<?php echo $listing->name ?>" required>
                         </div>
 
                         <div class="form-group">
                             <label for="name" class="control-label">Description</label>
-                            <input type="text" name="description" class="form-control" value="<?php echo $listing->description ?>">
+                            <input type="text" name="description" class="form-control" value="<?php echo $listing->description ?>" required>
                         </div>
 
                         <div class="form-group">
                             <label for="name" class="control-label">Website Url</label>
-                            <input type="text" name="website_url" class="form-control" value="<?php echo $listing->website_url ?>">
+                            <input type="text" name="website_url" class="form-control" value="<?php echo $listing->website_url ?>" required>
                         </div>
 
                         <div class="form-group">
                             <label for="name" class="control-label">Email</label>
-                            <input type="text" name="email" class="form-control" value="<?php echo $listing->email ?>">
+                            <input type="text" name="email" class="form-control" value="<?php echo $listing->email ?>" required>
                         </div>
 
                         <div class="form-group">
                             <label for="name" class="control-label">Phones</label>
-                            <input type="text" name="phone" class="form-control" value="<?php echo $listing->phone?>">
+                            <input type="text" name="phone" class="form-control" value="<?php echo $listing->phone?>" required>
                         </div>
 
                         <div class="form-group">
                             <label for="name" class="control-label">Address</label>
-                            <input type="text" name="address" class="form-control" value="<?php echo $listing->address ?>">
+                            <input type="text" name="address" class="form-control" value="<?php echo $listing->address ?>" required>
                             </div>
 
                         <div class="form-group">

@@ -32,4 +32,14 @@ class Listing extends BaseModel
     {
         return $this->db->delete('listings', $where);
     }
+
+    public function get_listing_category($id)
+    {
+        return $this->db->select('c.title FROM listingcategory cp INNER JOIN categories c ON cp.category_id=c.id WHERE cp.listing_id = :id', [':id'=>$id]);
+    }
+
+    public function get_listing_images($id)
+    {
+        return $this->db->select('image_name FROM images WHERE listing_id = :id', [':id'=>$id]);
+    }
 }

@@ -57,7 +57,6 @@ class AdminController extends BaseController
         response()->redirect('/admin');
     }
 
-    var_dump(Session::display());
     return $this->view->render('admin/dashboard');
    }
    

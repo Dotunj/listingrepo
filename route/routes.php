@@ -7,8 +7,8 @@ use App\Middleware\Auth;
 Session::init();
 
 Router::group(['namespace'=>'App\Controllers'], function() {
-    Router::get('/', 'AdminController@index');
-    Router::get('/admin', 'AdminController@index');
+    Router::get('/', 'HomeController@index');
+    Router::get('/login', 'AdminController@index')->name('admin');
     Router::post('/admin/login', 'AdminController@login');
 });
 

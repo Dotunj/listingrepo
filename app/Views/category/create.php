@@ -13,7 +13,7 @@
 
                         <div class="form-group">
                             <label for="name" class="control-label">Category Title</label>
-                            <input type="text" name="title" class="form-control" value="">
+                            <input type="text" name="title" class="form-control" required>
                         </div>
 
                         <div class="form-group">
